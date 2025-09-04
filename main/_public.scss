@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "yekan";
+    src: url(../font/Yekan.woff);
+    src: url(../font/Yekan.ttf);
+    src: url(../font/Yekan.eot);
+}
+*{
+    box-sizing: border-box;
+    font-family: "yekan";
+    scroll-behavior: smooth;
+}
+.container_1{
+    margin: 0 12%;
+}
+.container_2{
+    margin: 0 4%;
+}
+body{
+    overflow-x: hidden;
+}
+// =============extend==============
+.buttons{
+    font-weight: 500;
+    background-color: $design_color;
+    color: $main_text_color;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    &:hover{
+       background-color: $main_text_color;
+       color: $main_back_color; 
+       transition: all .2s ease-in-out;
+    }
+}

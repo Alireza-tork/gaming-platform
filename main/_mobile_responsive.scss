@@ -1,0 +1,172 @@
+@media(max-width:768px){
+// ============================header===============================
+.header{
+    .mobile_menu{
+        position: fixed;
+        z-index: 9;
+        top: 0;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        width: 100%;
+        height: 60px;
+        background-color: $main_back_color;
+        .bi-search{
+            color: $design_color;
+            font-size: 1.5rem;
+            padding: 0 0 0 40px;
+        }
+        >input{
+            outline: none;
+            border: none;
+            background-color: $main_back_color;
+            color: $main_text_color;
+        }
+        >.btn{
+            color: $main_text_color;
+        }
+    }
+    &__grid_show{
+        padding: 60px 0 60px 0;
+        display: flex;
+        &--navbar{
+        display: none;
+        }
+        &--icons{
+            display: block;
+            padding-bottom: 40px;
+        }
+        &--gamepad{
+            .gamepad_texts{
+                display: none;
+            }
+            .gamepad_img{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}
+.modal-body{
+    background-color: $main_back_color;
+    padding: 20px;
+    box-shadow: 0 0 2px $design_color;
+    >h3{
+        padding: 10px 0;
+        border-style: none none solid none;
+        border-color: $main_text_color;
+        border-width: 1px;
+        >a{
+            text-decoration: none;
+            color: $main_text_color;
+            text-transform: capitalize;
+        }
+    }
+}
+// ============================sec_1===============================
+.camos_gallery{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0 , $main_back_color 15% 100%);
+    .gallery_section{
+        &__gallery_bottom{
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 70vw;
+            margin: 0 auto;
+            &--bg_images{
+                width: 100%;
+                height: 300px;
+                >img{
+                    height: 400px;
+                    width: 100%;
+                }
+            }
+            &--bg_images2{
+                margin: 60px auto 0 auto;
+                width: 70vw;
+                height: 300px;
+                >img{
+                    height: 400px;
+                    width: 100%;
+                }
+            }
+            &--bg_images3{
+                margin: 60px auto 0 auto;
+                width: 70vw;
+                height: 300px;
+                >img{
+                    height: 400px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// ============================sec_3===============================
+.call_of_duty{
+    .ghost{
+        align-items: center;
+        flex-direction: column;
+        &__image{
+            width: 80%;
+            filter: blur(0px);
+        }
+        &__texts{
+            width: 80%;
+        }
+    }
+}
+// ============================sec_4===============================
+.gameplay{
+    .sec_gameplay{
+        &__about_game{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            &--video_game{
+                width: 80%;
+            }
+            &--rating_game{
+                width: 60%;
+                text-align: center;
+            }
+        }
+    }
+
+}
+// ============================sec_5===============================
+.pastime{
+    .gallery_grid{
+        &__grid_images{
+            display: none;
+            
+        }
+        .slide{display: block;}
+    }
+}
+// =========================footer===============================
+.footer{
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0 , $main_back_color 25% 100%);
+    .footer_items{
+        &__lists{
+            flex-direction: column;
+            align-items: start;
+            justify-content: start;
+            &--list_1{
+                width: 100%;
+            }
+            &--list_2{
+                width: 100%;
+            }
+            &--list_3{
+                width: 100%;
+            }
+            &--list_4{
+                margin: 30px 0;
+            }
+        }
+    }
+}
+}
