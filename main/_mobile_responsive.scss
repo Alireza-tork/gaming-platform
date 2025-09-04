@@ -49,6 +49,7 @@
     }
 }
 .modal-body{
+    display: block;
     background-color: $main_back_color;
     padding: 20px;
     box-shadow: 0 0 2px $design_color;
