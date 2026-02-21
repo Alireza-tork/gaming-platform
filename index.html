@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="gaming platform, online games, play online, competitive gaming, game library">
-    <meta name="description"content="A next-level gaming platform where you can play, compete, and connect with gamers worldwide.">
+    <meta name="description"
+        content="A next-level gaming platform where you can play, compete, and connect with gamers worldwide.">
     <meta name="author" content="Alireza">
+    <link rel="Icon" href="./img/favicon.png">
     <link rel="stylesheet" href="./scr/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./main/main.css">
@@ -14,6 +16,7 @@
 </head>
 
 <body>
+    
     <header class="header">
         <div class="mobile_menu">
             <label for="search"><i class="bi bi-search"></i></label>
@@ -22,6 +25,10 @@
                 discover
                 <i class="bi bi-chevron-down"></i>
             </button>
+            <div id="batteryBox">
+                <i class="bi bi-battery-half"></i>
+                <span id="batteryPercent">--%</span>
+            </div>
         </div>
         <div class="container_2">
             <div class="header__grid_show">
@@ -29,32 +36,33 @@
                     <h1>Gamecamo{}</h1>
                     <nav>
                         <ul>
-                            <li><a href="#">
+                            <li><a href="./404_error.html">
                                     <div class="line"></div>
                                     Home
                                 </a></li>
-                            <li><a href="#">
+                            <li><a href="./404_error.html">
                                     <div class="line"></div>
                                     About us
                                 </a></li>
-                            <li><a href="#">
+                            <li><a href="./404_error.html">
                                     <div class="line"></div>
                                     Portfolio
                                 </a></li>
-                            <li><a href="#">
+                            <li><a href="./404_error.html">
                                     <div class="line"></div>
                                     News
                                 </a></li>
                         </ul>
-                        <button>Connect us</button>
+                        <button id="signBtn"><a href="./sign_in.html">Sign in</a></button>
+                        <img id="userImg" src="./img/favicon.png" alt="logged_in" loading="lazy" style="display: none;">
                     </nav>
                 </nav>
                 <section class="header__grid_show--icons">
                     <a href="#"><i class="bi bi-steam"></i></a>
-                    <a href="#"><i class="bi bi-house-door-fill"></i></a>
-                    <a href="#"><i class="bi bi-shop"></i></a>
-                    <a href="#"><i class="bi bi-dpad"></i></a>
-                    <a href="#"><i class="bi bi-film"></i></a>
+                    <a href="./addProduct.html"><i class="bi bi-house-door-fill"></i></a>
+                    <a href="./seeAllGames.html"><i class="bi bi-shop"></i></a>
+                    <a href="./cartPage.html"><i class="bi bi-cart-fill"></i></a>
+                    <a href="./gamersNeeds.html"><i class="bi bi-dpad"></i></a>
                     <a href="#"><i class="bi bi-radar"></i></a>
                     <a href="#"><i class="bi bi-person-fill"></i></a>
                     <a href="#"><i class="bi bi-cloud"></i></a>
@@ -79,9 +87,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h3><a href="#">discover</a></h3>
-                    <h3><a href="#">browse</a></h3>
-                    <h3><a href="#">news</a></h3>
+                    <h3><a href="./sign_in.html">sign in</a></h3>
+                    <h3><a href="./404_error.html">discover</a></h3>
+                    <h3><a href="./404_error.html">browse</a></h3>
+                    <h3><a href="./404_error.html">news</a></h3>
                 </div>
             </div>
         </div>
@@ -95,9 +104,11 @@
                 <div class="gallery_section__gallery_bottom">
                     <div class="gallery_section__gallery_bottom--bg_images">
                         <img src="./img/Fortnite-Skin-PNG-HD 1.png" alt="skin_fortnite" loading="lazy">
+
                     </div>
                     <div class="gallery_section__gallery_bottom--bg_images2">
                         <img src="./img/Fortnite-Transparent 1.png" alt="skin_fortnite" loading="lazy">
+
                     </div>
                     <div class="gallery_section__gallery_bottom--bg_images3">
                         <img src="./img/Fortnite-Transparent 1.png" alt="skin_fortnite" loading="lazy">
@@ -111,37 +122,11 @@
             <div class="trending">
                 <div class="trending__top">
                     <h5>Currently Trending Games</h5>
-                    <button>SEE ALL</button>
+                    <button id="SeeTrending">SEE ALL</button>
                 </div>
-                <div class="trending__games">
-                    <div class="trending__games--trends">
-                        <img src="./img/sec_2_1.png" alt="game1" loading="lazy">
-                        <div class="text_trends">
-                            <i class="bi bi-fire"></i>
-                            <span>40 Followers</span>
-                        </div>
-                    </div>
-                    <div class="trending__games--trends">
-                        <img src="./img/sec_2_2.png" alt="game1" loading="lazy">
-                        <div class="text_trends">
-                            <i class="bi bi-fire"></i>
-                            <span>40 Followers</span>
-                        </div>
-                    </div>
-                    <div class="trending__games--trends">
-                        <img src="./img/sec_2_3.png" alt="game1" loading="lazy">
-                        <div class="text_trends">
-                            <i class="bi bi-fire"></i>
-                            <span>40 Followers</span>
-                        </div>
-                    </div>
-                    <div class="trending__games--trends">
-                        <img src="./img/sec_2_4.png" alt="game1" loading="lazy">
-                        <div class="text_trends">
-                            <i class="bi bi-fire"></i>
-                            <span>40 Followers</span>
-                        </div>
-                    </div>
+                <p class="note">!!Double click to Add game to cart!!</p>
+                <div class="trending__games" id="trendingContainer">
+
                 </div>
             </div>
         </div>
@@ -204,9 +189,25 @@
             </div>
         </div>
     </section>
+    <!-- =================================================================== -->
+
     <section class="pastime">
         <div class="container_1">
-            <section class="gallery_grid">
+            <div class="skeleton-wrapper">
+                <h2 class="skeleton skeleton-text"></h2>
+                <p class="skeleton skeleton-text"></p>
+
+                <!-- اسکلتون تصاویر گالری -->
+                <div class="gallery_grid__grid_images">
+                    <div class="skeleton skeleton-img1"></div>
+                    <div class="skeleton skeleton-img2"></div>
+                    <div class="skeleton skeleton-img3"></div>
+                    <div class="skeleton skeleton-img4"></div>
+                    <div class="skeleton skeleton-img5"></div>
+                    <div class="skeleton skeleton-img6"></div>
+                </div>
+            </div>
+            <section class="gallery_grid" style="display: none;">
                 <h2>Our Recent Projects</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, omnis.</p>
                 <div class="gallery_grid__grid_images">
@@ -234,13 +235,16 @@
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="./img/ghost.avif" class="d-block w-50 mx-auto rounded" alt="ghost-of-tsushima" loading="lazy">
+                            <img src="./img/ghost.avif" class="d-block w-50 mx-auto rounded" alt="ghost-of-tsushima"
+                                loading="lazy">
                         </div>
                         <div class="carousel-item">
-                            <img src="./img/godofwar.avif" class="d-block w-50 mx-auto rounded" alt="god-of-war" loading="lazy">
+                            <img src="./img/godofwar.avif" class="d-block w-50 mx-auto rounded" alt="god-of-war"
+                                loading="lazy">
                         </div>
                         <div class="carousel-item">
-                            <img src="./img/EGS_AlanWakealan_wake.jpg" class="d-block w-50 mx-auto rounded" alt="alan-wake" loading="lazy">
+                            <img src="./img/EGS_AlanWakealan_wake.jpg" class="d-block w-50 mx-auto rounded"
+                                alt="alan-wake" loading="lazy">
                         </div>
                     </div>
                 </div>ّ
@@ -250,7 +254,16 @@
             </section>
         </div>
     </section>
-    <footer class="footer">
+    <!-- ================================================= -->
+    <div class="footer-skeleton">
+        <div class="sk-footer-logo"></div>
+        <div class="sk-footer-lists">
+            <div class="sk-list sk-list-1"></div>
+            <div class="sk-list sk-list-2"></div>
+            <div class="sk-list sk-list-3"></div>
+        </div>
+    </div>
+    <footer class="footer" style="display:none;">
         <div class="container_2">
             <div class="footer_items">
                 <div class="footer_items__image">
@@ -296,7 +309,18 @@
             </div>
         </div>
     </footer>
-    <script src="./scr/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- =====================================scrollUp========================================= -->
+    <div class="scrollUpp"><i class="bi bi-chevron-double-up"></i></div>
+    <!-- =====================================cart========================================= -->
+    <a href="./cartPage.html" class="cartFixed">
+        <div class="cartI">
+            <i class="bi bi-cart-fill"></i>
+            <span class="badge">0</span>
+        </div>
+    </a>
+
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./main/main.css">
+    <title>addProduct</title>
+</head>
+
+<body id="backColor">
+    <aside class="sideMenu">
+        <div class="sideMenu__menuHr">
+            <h1 class="sideMenu__menuHr--game">Gamecamo{}</h1>
+            <ul class="sideMenu__menuHr--list">
+                <li id="menuHome">
+                    <i class="bi bi-house-door-fill"></i>
+                    <a href="#">dashboard</a>
+                </li>
+                <li id="menuProducts">
+                    <i class="bi bi-box2-fill"></i>
+                    <a href="#">Products</a>
+                </li>
+                <li id="menuSettings">
+                    <i class="bi bi-gear-fill"></i>
+                    <a href="#">Settings</a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+
+    <section id="dashboard" class="page">
+
+    </section>
+
+
+    <section id="addProducts" class="page">
+        <div class="productInfo">
+            <h3 class="productInfo__addProduct">Add Product</h3>
+            <div class="productInfo__particulars">
+                <div class="addImage">
+                    <h6 class="addImageText">Add images</h6>
+                    <div class="importImage">
+                        <label for="fileUpload" class="customfile">
+                            <i class="bi bi-images"></i>
+                        </label>
+                        <input id="fileUpload" type="file">
+                    </div>
+                    <div class="showIMg">
+                        <img class="imgUploaded" src="" alt="addedGamePicture" loading="lazy">
+                        <div class="imgInfo">
+                            <h5></h5>
+                            <span></span>
+                        </div>
+                        <i class="bi bi-trash-fill"></i>
+                    </div>
+                </div>
+                <div class="addDetailes">
+                    <form class="ProductForm">
+                        <div class="writeName">
+                            <label class="ProductNameTitle" for="ProductName">Game Title</label>
+                            <input id="ProductName" type="text">
+                        </div>
+                        <div class="selectgenre">
+                            <label class="genreTitle" for="genre">Genre</label>
+                            <select name="" id="genre">
+                                <option value="All">All</option>
+                                <option value="Action">Action</option>
+                                <option value="Adventure">Adventure</option>
+                                <option value="RPG">RPG</option>
+                                <option value="Strategy">Strategy</option>
+                                <option value="Sports">Sports</option>
+                                <option value="Puzzle">Puzzle</option>
+                            </select>
+                        </div>
+                        <div class="selecrelease">
+                            <label class="releaseTitle" for="release">Release</label>
+                            <select name="" id="release">
+                                <option value="All">All</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2020">2020</option>
+                            </select>
+                        </div>
+                        <div class="writePrice">
+                            <label class="priceTitle" for="price">Price</label>
+                            <input id="price" type="text">
+                        </div>
+                        <div class="writefollowers">
+                            <label class="followersTitle" for="followers">Followers</label>
+                            <input id="followers" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <button class="publish">Publish Product</button>
+        </div>
+    </section>
+
+
+    <section id="settingsPage" class="page">
+
+    </section>
+    
+
+
+    <script src="./js/addProduct.js"></script>
+</body>
+
+</html>

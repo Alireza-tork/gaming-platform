@@ -34,26 +34,12 @@ body{
         
     }
 }
-// =============extend==============
-.buttons{
-    font-weight: 500;
-    background-color: $design_color;
-    padding: 8px 16px;
-    border-radius: 16px;
+.inputs{
+    width: 100%;
+    background-color: rgb(57, 57, 57);
     border: none;
-    transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -webkit-transition: all .2s ease-in-out;
-    &:hover{
-       background-color: $main_text_color;
-    }
-    &:hover a{
-       color: $design_title; 
-    }
-    >a{
-        color: $main_text_color;
-        text-decoration: none;
-    }
+    height: 30px;
+    border-radius: 4px;
+    outline: none;
+    margin-bottom: 10px;
 }

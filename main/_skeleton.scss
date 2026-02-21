@@ -1,0 +1,291 @@
+$sk-bg: rgba(255, 255, 255, 0.15);
+$sk-radius: 8px;
+
+@keyframes skPulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+// Placeholder برای اسکلتون
+%skeleton-base {
+    background: $sk-bg;
+    border-radius: $sk-radius;
+    animation: skPulse 1.4s infinite ease-in-out;
+}
+
+// ===== Skeleton Container =====
+.header-skeleton {
+    padding: 60px 0;
+    background-color: $main_back_color;
+    background-image: url("../img/VECTOR.png");
+    background-repeat: repeat-x;
+    background-position: center;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 40px;
+
+    // Navbar Skeleton
+    .sk-nav {
+        @extend %skeleton-base;
+        grid-column: 1 / 3;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    // Sidebar Icons Skeleton
+    .sk-icons {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        div {
+            @extend %skeleton-base;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+        }
+    }
+
+    // Main Content / Gamepad Skeleton
+    .skAll {
+        display: flex;
+
+        .sk-content {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .sk-text {
+                @extend %skeleton-base;
+                height: 14px;
+                width: 70%;
+
+                &.big {
+                    height: 26px;
+                    width: 50%;
+                }
+
+                &.mid {
+                    width: 60%;
+                }
+
+                &.short {
+                    width: 40%;
+                }
+            }
+
+        }
+
+        .sk-img {
+            @extend %skeleton-base;
+            width: 60%;
+            height: 260px;
+            margin-top: 20px;
+        }
+    }
+
+    // ===== Mobile =====
+    @media (max-width: 768px) {
+        padding: 80px 20px;
+        grid-template-columns: 1fr;
+
+        .sk-nav {
+            height: 45px;
+            width: 100%;
+        }
+
+        .sk-icons {
+            flex-direction: row;
+            justify-content: space-between;
+
+            div {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .sk-content {
+            .sk-img {
+                width: 100%;
+                height: 240px;
+            }
+        }
+    }
+}
+
+// ============================pstTime=======================
+
+.skeleton {
+    background-color: $design_color;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -150px;
+        height: 100%;
+        width: 150px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+        animation: loading 1.2s infinite;
+    }
+}
+
+@keyframes loading {
+    0% {
+        left: -150px;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* اسکلتون متن */
+.skeleton-text {
+    height: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* اسکلتون تصاویر گالری */
+.gallery_grid__grid_images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    width: 100%;
+    height: 300px;
+    margin-top: 10px;
+
+
+    .skeleton-img1 {
+        width: 100%;
+        height: 100%;
+        grid-area: 1 / 1 / 2 / 2;
+        border: 1px solid $design_title;
+        border-radius: 8px;
+    }
+
+    .skeleton-img2 {
+        width: 100%;
+        height: 100%;
+        grid-area: 1 / 2 / 2 / 3;
+        border: 1px solid $design_title;
+        border-radius: 8px;
+    }
+
+    .skeleton-img3 {
+        width: 100%;
+        height: 100%;
+        grid-area: 1 / 3 / 2 / 4;
+        border: 1px solid $design_title;
+        border-radius: 8px;
+    }
+
+    .skeleton-img4 {
+        width: 62%;
+        height: 100%;
+        grid-area: 2 / 1 / 3 / 2;
+        border: 1px solid $design_title;
+        border-radius: 8px;
+    }
+
+    .skeleton-img5 {
+        width: 105%;
+        height: 100%;
+        grid-area: 2 / 2 / 3 / 3;
+        margin-left: -35%;
+        border: 1px solid $design_title;
+        border-radius: 8px;
+    }
+
+    .skeleton-img6 {
+        width: 130%;
+        height: 100%;
+        grid-area: 2 / 3 / 3 / 4;
+        margin-left: -30%;
+        border: 1px solid $design_title;
+        border-radius: 8px;
+    }
+}
+
+// ===========================footer=========================
+$sk-radius: 8px;
+
+@keyframes skPulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+%skeleton-base {
+    background: $design_color;
+    border-radius: $sk-radius;
+    animation: skPulse 1.4s infinite ease-in-out;
+}
+
+// ===== Footer Skeleton =====
+.footer-skeleton {
+    padding: 40px 4%;
+    margin-top: -200px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, $main_back_color 25% 100%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .sk-footer-logo {
+        @extend %skeleton-base;
+        width: 100%;
+        height: 100px;
+    }
+
+    .sk-footer-lists {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 100%;
+
+        .sk-list {
+            @extend %skeleton-base;
+            height: 160px;
+            flex: 1 1 200px;
+        }
+    }
+
+    // Mobile
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        .sk-footer-lists {
+            flex-direction: column;
+
+            .sk-list {
+                width: 100%;
+                height: 60px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

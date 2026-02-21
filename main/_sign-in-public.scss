@@ -14,8 +14,21 @@
 .container_2{
     margin: 0 4%;
 }
-body{
+#sign_in{
     overflow-x: hidden;
+    background-image: url('../img/bg-sign-in.jpg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    position: relative;
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: radial-gradient(circle at center, #ff7f5f00 0% 30%, #2c2c2c 95% 100%);
+    }
     &::-webkit-scrollbar {
         background-color: $main_back_color;
         width: 15px;
@@ -34,26 +47,11 @@ body{
         
     }
 }
-// =============extend==============
-.buttons{
-    font-weight: 500;
-    background-color: $design_color;
-    padding: 8px 16px;
-    border-radius: 16px;
-    border: none;
-    transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -webkit-transition: all .2s ease-in-out;
-    &:hover{
-       background-color: $main_text_color;
-    }
-    &:hover a{
-       color: $design_title; 
-    }
-    >a{
-        color: $main_text_color;
-        text-decoration: none;
+@media(max-width:768px){
+    #sign_in{
+        background-image: url(../img/bg_mobile_responsive_signin.jpg);
+        background-repeat: repeat-y;
+        background-size: cover;
+        position: relative;
     }
 }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Alireza">
+    <link rel="Icon" href="./img/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./main/main.css">
+    <title>sign_in</title>
+</head>
+
+<body id="sign_in">
+    <section class="sign_in">
+        <div class="container_2">
+            <div class="form">
+                <img src="./img/undraw_certificate_cqps.svg" alt="form" loading="lazy">
+                <h2>Sign in</h2>
+                <form action="">
+                    <div class="account_name">
+                        <label for="account_name">SIGN IN WITH ACCOUNT NAME</label>
+                        <input class="input" type="text" id="account_name" name="account_name" autocomplete="username"
+                            maxlength="30" minlength="3" spellcheck="false" placeholder="Enter your account name"
+                            required>
+                    </div>
+                    <div class="password">
+                        <label for="password">PASSWORD</label>
+                        <input class="input" type="password" id="password" name="password"
+                            autocomplete="current-password" maxlength="64"
+                            placeholder="Enter your password" spellcheck="false" required>
+                        <i id="show" class="bi bi-eye"></i>
+                        <i id="hide" class="bi bi-eye-slash"></i>
+                    </div>
+
+                    <div class="codeMaker">
+                        <button class="refresh" onclick="return refresh()">🔃</button>
+                        <div class="chapcha"></div>
+                    </div>
+                    <input id="get_code" type="text" placeholder="Enter code shown above" required>
+
+                    <div class="checkbox">
+                        <input class="input" type="checkbox" id="checkbox" required>
+                        <label for="checkbox">Remember me</label>
+                    </div>
+                    <div class="submit">
+                        <input class="input" id="submit" type="submit" name="submit" value="Sign in" disabled>
+                    </div>
+                </form>
+                <a class="google" href="#">
+                    <i class="bi bi-google"></i>
+                    Sign in with google</a>
+                <div class="dont_have_account">
+                    <span>Don't have an account?</span>
+                    <a href="./sign_up.html">Sign up,it's free!</a>
+                </div>
+            </div>
+            <div class="blur"></div>
+        </div>
+    </section>
+    <script defer>
+        let form = document.querySelector("form");
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+
+        let showEye = document.getElementById('show')
+        let hideEye = document.getElementById('hide')
+        let pass = document.querySelector("#password")
+        // ==============hide/show password==============
+        hideEye.style.display = "none"
+
+        showEye.addEventListener('click', () => {
+            pass.type = 'text';
+            showEye.style.display = "none";
+            hideEye.style.display = "block";
+        })
+        hideEye.addEventListener('click', () => {
+            pass.type = 'password';
+            showEye.style.display = "block";
+            hideEye.style.display = "none";
+        })
+        // ===================checkbox===================
+        let checkbox = document.getElementById('checkbox')
+        let input = document.querySelector("#submit")
+        checkbox.addEventListener('click', () => {
+            input.disabled = !checkbox.checked
+        })
+        // ===================addevent===================
+        let addEvent = document.querySelectorAll('.input')
+        console.log(addEvent);
+
+        addEvent.forEach(item => {
+            item.addEventListener('invalid', () => {
+                item.style.backgroundColor = 'rgb(200, 87, 83)'
+            })
+            item.addEventListener('input', () => {
+                item.style.border = '1px solid #fff'
+            })
+            item.addEventListener('blur', () => {
+                item.style.border = 'none'
+            })
+            item.addEventListener('keydown', () => {
+                item.style.backgroundColor = 'rgba(255, 255, 255, 0.262)'
+            })
+            item.addEventListener('keyup', () => {
+                item.style.backgroundColor = 'rgb(57, 57, 57)'
+            })
+        })
+        // ===================capchacode===================
+        let capchacode = document.getElementsByClassName("chapcha")[0]
+        let getcode = document.querySelector('#get_code')
+        let currentcode = ""
+        function refresh() {
+            currentcode = Math.ceil(Math.random() * 1000000);
+            capchacode.innerText = currentcode;
+        }
+        refresh()
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            if (getcode.value != currentcode) {
+                alert("❌ کد وارد شده اشتباه است!");
+                return;
+            }
+
+            let accname = document.querySelector("#account_name").value;
+            let pass = document.querySelector("#password").value;
+
+            if (users.length === 0) {
+                alert("شما هنوز ثبت‌نام نکرده‌اید!");
+                return;
+            }
+
+            let found = users.find(u => u.email === accname && u.pass === pass);
+
+            if (!found) {
+                alert("نام کاربری یا رمز اشتباه است!");
+                return;
+            }
+
+            if (document.querySelector("#checkbox").checked) {
+                localStorage.setItem("loggedInUser", JSON.stringify(found));
+            } else {
+                sessionStorage.setItem("loggedInUser", JSON.stringify(found));
+            }
+
+            alert("ورود موفقیت‌آمیز ✅");
+            window.location.href = "./index.html";
+        });
+    </script>
+</body>
+
+</html>

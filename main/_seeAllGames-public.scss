@@ -14,25 +14,8 @@
 .container_2{
     margin: 0 4%;
 }
-body{
-    overflow-x: hidden;
-    &::-webkit-scrollbar {
-        background-color: $main_back_color;
-        width: 15px;
-    }
-    
-    &::-webkit-scrollbar-track {
-        border: 1px solid whitesmoke;
-        margin: 10px;
-        border-radius: 16px;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-        background-color: $design_title;
-        border-radius: 16px;
-        box-shadow: 0 0 8px 2px whitesmoke;
-        
-    }
+#moreGames{
+    background-color: $main_back_color;
 }
 // =============extend==============
 .buttons{

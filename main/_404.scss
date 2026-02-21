@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Winky_Rough";
+    src: url(../font/Winky_Rough/WinkyRough-VariableFont_wght.ttf);
+    src: url(../font/Winky_Rough/WinkyRough-Italic-VariableFont_wght.ttf);
+}
+*{
+    box-sizing: border-box;
+    font-family: "Winky_Rough";
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+// ====================================================
+#page404 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    picture{
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    div{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        width: 300px;
+        padding: 20px;
+        background-color: rgb(241, 226, 177);
+        box-shadow: 0 0 10px 1px firebrick;
+        border-radius: 4px;
+        transform: translate(-50%);
+        h1{
+            font-size: 9rem;
+            color: firebrick;
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            font-size: 2rem;
+            color: firebrick;
+            font-weight: 800;
+            margin: 0;
+        }
+    }
+}
